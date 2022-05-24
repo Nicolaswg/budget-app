@@ -1,0 +1,2 @@
+class GroupAgreement < ApplicationRecord
+end
