@@ -1,2 +1,18 @@
-<h1>Groups#index</h1>
-<p>Find me in app/views/groups/index.html.erb</p>
+<div class="groups-page">
+	<% @current_user.groups.each do |group| %>
+		<div class="groups-card">
+			<div class="groups-icon">
+				<img src="<%= group.icon %>" alt="icon" class="icon">
+			</div>
+			<div class="groups-content">
+				<h3>
+					<%= group.name %>
+				</h3>
+				<span><%=group.created_at.day%>/<%=group.created_at.month%>/<%=group.created_at.year%></span>
+			</div>
+		</div>
+	<% end %>
+	<div class="groups-btn">
+		<%= link_to 'Add group', new_group_path%>
+	</div>
+</div>

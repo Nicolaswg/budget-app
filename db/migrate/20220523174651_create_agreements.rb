@@ -7,8 +7,5 @@ class CreateAgreements < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-
-		add_index :agreements, :author_id
-		add_foreign_key :agreements, :users, column: :author_id, on_delete: :cascade
   end
 end

@@ -1,2 +1,13 @@
-<h1>Groups#new</h1>
-<p>Find me in app/views/groups/new.html.erb</p>
+<%=form_with model: @group, scope: :groups, url: groups_path, method: :post, class: "group-form" do |form|%>
+	<div class="text-field">
+		<%= form.text_field :name, autocomplete: "name", placeholder: 'Name' %>
+	</div>
+	<div class="text-field">
+		<%= form.text_field :icon, autocomplete: "icon", placeholder: 'Icon URL' %>
+	</div>
+	<%= form.submit 'submit', class: "submit" %>
+	<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: "#{name} generic-alert" %>
+  <% end -%>
+<%end%>
+

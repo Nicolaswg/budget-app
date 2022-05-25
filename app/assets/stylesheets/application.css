@@ -30,6 +30,8 @@ body {
   flex-direction: column;
 }
 
+/* SPLASH SCREEN */
+
 .splash-page {
   background-color: var(--color-white);
   position: relative;
@@ -74,4 +76,10 @@ body {
 .splash-link a:nth-child(2) {
   background-color: inherit;
   color: var(--font-color);
+}
+
+/* GROUP INDEX */
+
+.groups-page {
+  background-color: var(--color-white);
 }
