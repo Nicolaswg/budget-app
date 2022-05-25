@@ -1,4 +1,4 @@
-<div class="groups-page flex-col">
+<div class="page flex-col">
 	<nav class="navbar flex-row">
 		<%= link_to destroy_user_session_path, type: 'button' do %>
 			<%= image_tag('menu-icon.png', :size => "50x50", :class => 'menu')%>
@@ -7,20 +7,22 @@
 			<%= image_tag('search-icon.png', :size => "25x25", :class => 'search')%>
 	</nav>
 	<% @current_user.groups.each do |group| %>
-		<div class="groups-card flex-row">
-			<img src="<%= group.icon %>" alt="icon" class="groups-icon">
-			<div class="groups-content flex-row">
-				<div class="groups-text flex-col">
-					<h3>
-						<%= group.name %>
-					</h3>
-					<span>
-						<%=group.created_at.day%>/<%=group.created_at.month%>/<%=group.created_at.year%>
-					</span>
+		<%= link_to group_agreements_path(group.id), class: "group-card-link" do %>
+			<div class="groups-card flex-row">
+				<img src="<%= group.icon %>" alt="icon" class="groups-icon">
+				<div class="groups-content flex-row">
+					<div class="groups-text flex-col">
+						<h3>
+							<%= group.name %>
+						</h3>
+						<span>
+							<%=group.created_at.day%>/<%=group.created_at.month%>/<%=group.created_at.year%>
+						</span>
+					</div>
+					<span>$<%=group.total_amount%></span>
 				</div>
-				<span>$<%=group.total_amount%></span>
 			</div>
-		</div>
+		<%end%>
 	<% end %>
 	<div class="groups-btn flex-col">
 		<%= link_to 'ADD CATEGORY', new_group_path, class: 'link'%>
