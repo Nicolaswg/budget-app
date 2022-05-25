@@ -1,18 +1,21 @@
-<div class="groups-page">
+<div class="groups-page flex-col">
 	<% @current_user.groups.each do |group| %>
-		<div class="groups-card">
-			<div class="groups-icon">
-				<img src="<%= group.icon %>" alt="icon" class="icon">
-			</div>
-			<div class="groups-content">
-				<h3>
-					<%= group.name %>
-				</h3>
-				<span><%=group.created_at.day%>/<%=group.created_at.month%>/<%=group.created_at.year%></span>
+		<div class="groups-card flex-row">
+			<img src="<%= group.icon %>" alt="icon" class="groups-icon">
+			<div class="groups-content flex-row">
+				<div class="groups-text flex-col">
+					<h3>
+						<%= group.name %>
+					</h3>
+					<span>
+						<%=group.created_at.day%>/<%=group.created_at.month%>/<%=group.created_at.year%>
+					</span>
+				</div>
+				<span>$<%=group.total_amount%></span>
 			</div>
 		</div>
 	<% end %>
-	<div class="groups-btn">
-		<%= link_to 'Add group', new_group_path%>
+	<div class="groups-btn flex-col">
+		<%= link_to 'ADD CATEGORY', new_group_path, class: 'link'%>
 	</div>
 </div>
