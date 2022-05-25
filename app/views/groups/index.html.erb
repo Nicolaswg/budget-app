@@ -1,4 +1,11 @@
 <div class="groups-page flex-col">
+	<nav class="navbar flex-row">
+		<%= link_to destroy_user_session_path, type: 'button' do %>
+			<%= image_tag('menu-icon.png', :size => "50x50", :class => 'menu')%>
+		<%end%>
+		<h3>CATEGORY</h3>
+			<%= image_tag('search-icon.png', :size => "25x25", :class => 'search')%>
+	</nav>
 	<% @current_user.groups.each do |group| %>
 		<div class="groups-card flex-row">
 			<img src="<%= group.icon %>" alt="icon" class="groups-icon">

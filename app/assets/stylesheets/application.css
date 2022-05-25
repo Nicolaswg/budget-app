@@ -79,6 +79,17 @@ body {
   color: var(--font-color);
 }
 
+/* NAVBAR */
+.navbar {
+  background-color: var(--main-color);
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.navbar h3 {
+  color: var(--color-white)
+}
 /* GROUP INDEX */
 
 .groups-page {
@@ -138,4 +149,21 @@ body {
   width: 90%;
   padding: 20px;
   font-weight: 700;
+}
+
+/* GROUP NEW */
+
+.text-field input{
+  width: 100%;
+  padding: 6px;
+}
+
+/* FORM GROUP */
+
+.submit {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--color-white);
+  cursor: pointer;
 }
