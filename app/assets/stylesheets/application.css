@@ -88,11 +88,12 @@ body {
 }
 
 .navbar h3 {
-  color: var(--color-white)
+  color: var(--color-white);
 }
+
 /* GROUP INDEX */
 
-.groups-page {
+.page {
   background-color: var(--color-white);
   height: 100vh;
   position: relative;
@@ -151,14 +152,57 @@ body {
   font-weight: 700;
 }
 
+.group-card-link {
+  text-decoration: none;
+}
+
 /* GROUP NEW */
 
-.text-field input{
+.text-field input {
   width: 100%;
   padding: 6px;
 }
 
-/* FORM GROUP */
+/* AGREEMENT INDEX */
+
+.ct-container {
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-ligth-white);
+  height: 80px;
+  padding: 0 10px 0 10px;
+}
+
+.ct-main {
+  align-items: center;
+  column-gap: 5px;
+}
+
+.ct-main img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.ct-name {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.ct-total {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.ct-card {
+  background-color: var(--color-ligth-white);
+  padding: 12px;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* PROJECT FORMS */
 
 .submit {
   background: none;
@@ -166,4 +210,45 @@ body {
   font-size: 1rem;
   color: var(--color-white);
   cursor: pointer;
+}
+
+.label {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.check-box {
+  row-gap: 10px;
+  margin-top: 10px;
+}
+
+/* FLASHES */
+
+.generic-alert {
+  border-radius: 3px;
+  margin: 10px;
+  padding: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-white);
+  border: 2px solid var(--font-color);
+  animation: hideAnimation 0s ease-in 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hideAnimation {
+  to {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
+.error {
+  background: rgba(247, 65, 65, 0.751);
+}
+
+.success {
+  background: rgba(12, 194, 12, 0.769);
 }

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 		root "splash#index", as: :unauthenticated_root
 	end
 
-	resources :groups, only: [:index, :create, :new,]
+	resources :groups, only: [:index, :create, :new,] do
+		resources :agreements, only: [:index, :create, :new]
+	end
 
 end

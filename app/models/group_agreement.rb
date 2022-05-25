@@ -5,6 +5,6 @@ class GroupAgreement < ApplicationRecord
 	belongs_to :group
 
 	def increase_group_total 
-		group.increment!(:total_ammount, agreement.amount)
+		group.increment!(:total_amount, agreement.amount)
 	end
 end

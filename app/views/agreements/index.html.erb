@@ -1,0 +1,37 @@
+<div class="page flex-col">
+	<nav class="navbar flex-row">
+		<%= link_to groups_path, type: 'button' do %>
+			<%= image_tag('arrow-icon.png', :size => "25x25", :class => 'menu')%>
+		<%end%>
+		<h3>TRANSACTION</h3>
+			<%= image_tag('search-icon.png', :size => "25x25", :class => 'search')%>
+	</nav>
+	<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: "#{name} generic-alert" %>
+  <% end -%>
+	<div class="ct-container flex-row">
+		<div class="ct-main flex-row">
+			<img src="<%= @group.icon%>" alt="icon" class="ct-icon">
+			<span class="ct-name">
+				<h3><%=@group.name%></h3>
+			</span>
+		</div>
+		<span class="ct-total">
+			Total: $<%= @group.total_amount%>
+		</span>
+	</div>
+	<% @group_transaction.each do |transaction|%>
+		<div class="ct-card flex-row">
+			<div class="ct-card-text flex-col">
+				<span><%=transaction.agreement.name%></span>
+				<span>
+				<%=transaction.agreement.created_at.day%>/<%=transaction.agreement.created_at.month%>/<%=transaction.agreement.created_at.year%>
+				</span>
+			</div>
+			<span>$<%=transaction.agreement.amount%></span>
+		</div>
+	<%end%>
+	<div class="groups-btn flex-col">
+		<%= link_to 'ADD TRANSACTION', new_group_agreement_path, class: 'link'%>
+	</div>
+</div>
