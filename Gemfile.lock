@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/ffi/ffi.git
+  revision: 08fca4deba219567a834cf0e3d1f00c514ebb378
+  submodules: true
+  specs:
+    ffi (1.15.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -279,6 +286,7 @@ DEPENDENCIES
   debug
   devise (~> 4.8, >= 4.8.1)
   factory_bot_rails (~> 6.2)
+  ffi!
   importmap-rails
   jbuilder
   pg (~> 1.1)

@@ -81,4 +81,5 @@ group :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+	gem 'ffi', github: 'ffi/ffi', submodules: true
 end
