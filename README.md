@@ -20,10 +20,6 @@
 
 [Heroku](https://budget-capstone-1.herokuapp.com/)
 
-## Project Video
-
-[Loom]()
-
 ### Project Set up:
 
 #### Step 1:
