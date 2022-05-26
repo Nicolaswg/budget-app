@@ -24,6 +24,9 @@
 			</div>
 		<%end%>
 	<% end %>
+	<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: "#{name} generic-alert" %>
+  <% end -%>
 	<div class="groups-btn flex-col">
 		<%= link_to 'ADD CATEGORY', new_group_path, class: 'link'%>
 	</div>

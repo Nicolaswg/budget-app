@@ -6,9 +6,6 @@
 		<h3>TRANSACTION</h3>
 			<%= image_tag('search-icon.png', :size => "25x25", :class => 'search')%>
 	</nav>
-	<% flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, class: "#{name} generic-alert" %>
-  <% end -%>
 	<div class="ct-container flex-row">
 		<div class="ct-main flex-row">
 			<img src="<%= @group.icon%>" alt="icon" class="ct-icon">
@@ -31,6 +28,9 @@
 			<span>$<%=transaction.agreement.amount%></span>
 		</div>
 	<%end%>
+	<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: "#{name} generic-alert" %>
+  <% end -%>
 	<div class="groups-btn flex-col">
 		<%= link_to 'ADD TRANSACTION', new_group_agreement_path, class: 'link'%>
 	</div>
