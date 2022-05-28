@@ -1,15 +1,291 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+
+:root {
+  --main-color: #3678c2;
+  --second-color: #60b524;
+  --font-color: #434c55;
+  --font-family: proxima-nova, sans-serif;
+  --color-white: #f1f3f2;
+  --color-ligth-white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  color: var(--font-color);
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* SPLASH SCREEN */
+
+.splash-page {
+  background-color: var(--color-white);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.splash-title {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin: 300px 15px 0 15px;
+  left: 0;
+  right: 0;
+}
+
+.splash-title h1 {
+  font-family: "Cookie", cursive;
+  font-size: 5rem;
+}
+
+.splash-link {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  row-gap: 2px;
+  padding: 0 12px 0 12px;
+}
+
+.splash-link a {
+  background: var(--main-color);
+  width: 100%;
+  text-align: center;
+  padding: 20px 0 20px 0;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.splash-link a:nth-child(2) {
+  background-color: inherit;
+  color: var(--font-color);
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: var(--main-color);
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.navbar h3 {
+  color: var(--color-white);
+}
+
+/* GROUP INDEX */
+
+.page {
+  background-color: var(--color-white);
+  height: 100vh;
+  position: relative;
+}
+
+.groups-card {
+  background-color: var(--color-ligth-white);
+  align-items: center;
+  height: 100px;
+  -webkit-box-shadow: 10px 9px 20px 0 #000;
+  box-shadow: 10px 9px 20px 0 #000;
+  margin: 10px;
+  border-radius: 10px;
+  column-gap: 10px;
+  padding: 0 8px 0 8px;
+}
+
+.groups-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+}
+
+.groups-content {
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.groups-text {
+  gap: 2px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.groups-content span {
+  font-weight: 700;
+}
+
+.groups-btn {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  background-color: var(--second-color);
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-white);
+  border-radius: 10px;
+  width: 90%;
+  padding: 20px;
+  font-weight: 700;
+}
+
+.group-card-link {
+  text-decoration: none;
+}
+
+/* GROUP NEW */
+
+.text-field input {
+  width: 100%;
+  padding: 6px;
+}
+
+/* AGREEMENT INDEX */
+
+.ct-container {
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-ligth-white);
+  height: 80px;
+  padding: 0 10px 0 10px;
+}
+
+.ct-main {
+  align-items: center;
+  column-gap: 5px;
+}
+
+.ct-main img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.ct-name {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.ct-total {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.ct-card {
+  background-color: var(--color-ligth-white);
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin: 10px;
+  border-radius: 4px;
+  -webkit-box-shadow: 10px 9px 20px 0 #000;
+  box-shadow: 10px 9px 20px 0 #000;
+}
+
+/* PROJECT FORMS */
+
+.submit {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.label {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.check-box {
+  row-gap: 10px;
+  margin-top: 10px;
+}
+
+.field {
+  display: flex;
+  width: 100%;
+  padding: 5px;
+  background-color: var(--color-ligth-white);
+}
+
+.log-input {
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+}
+
+.actions {
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.actions input {
+  width: 100%;
+  background: none;
+  background-color: var(--main-color);
+  color: var(--color-ligth-white);
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* FLASHES */
+
+.generic-alert {
+  border-radius: 3px;
+  margin: 10px;
+  padding: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-white);
+  border: 2px solid var(--font-color);
+  animation: hideAnimation 0s ease-in 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hideAnimation {
+  to {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
+.error {
+  background: rgba(247, 65, 65, 0.751);
+}
+
+.success {
+  background: rgba(12, 194, 12, 0.769);
+}

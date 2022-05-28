@@ -1,0 +1,29 @@
+<div class="page flex-col">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <nav class="navbar flex-row">
+		<%= link_to unauthenticated_root_path, type: 'button' do %>
+			<%= image_tag('arrow-icon.png', :size => "25x25", :class => 'menu')%>
+		<%end%>
+		<h3>LOGIN</h3>
+			<%= image_tag('search-icon.png', :size => "25x25", :class => 'search')%>
+	</nav>
+	<div class="field">
+    <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "log-input" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, placeholder: "Password", class: "log-input" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions flex-row">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+</div>

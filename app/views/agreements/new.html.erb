@@ -1,0 +1,29 @@
+<%=form_with url: group_agreements_path, method: :post, class: "group-form" do |form|%>
+	<nav class="navbar flex-row">
+		<%= link_to group_agreements_path, type: 'button' do %>
+			<%= image_tag('arrow-icon.png', :size => "25x25", :class => 'menu')%>
+		<%end%>
+		<h3>ADD TRANSACTION</h3>
+		<%= form.submit 'Save', class: "submit" %>
+			
+	</nav>
+
+	<div class="text-field flex-row">
+		<%= form.text_field :name, placeholder: 'Name' %>
+	</div>
+	<div class="text-field flex-row">
+		<%= form.number_field :amount, placeholder: 'Amount' %>
+	</div>
+	
+	<%=form.label :groups, 'Categories', class: "label"%>
+	<div class="check-box flex-col">
+	<%= form.collection_check_boxes :groups, @list_group, :id, :name, { include_hidden: false }  do |b| %>
+		<%= b.label { b.check_box + b.text } %>
+  <% end %>
+	</div>
+	
+	<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: "#{name} generic-alert" %>
+  <% end -%>
+
+<%end%>

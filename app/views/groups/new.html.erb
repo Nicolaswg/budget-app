@@ -1,0 +1,21 @@
+<%=form_with model: @group, scope: :groups, url: groups_path, method: :post, class: "group-form" do |form|%>
+	<nav class="navbar flex-row">
+		<%= link_to groups_path, type: 'button' do %>
+			<%= image_tag('arrow-icon.png', :size => "25x25", :class => 'menu')%>
+		<%end%>
+		<h3>ADD CATEGORY</h3>
+		<%= form.submit 'Save', class: "submit" %>
+			
+	</nav>
+
+	<div class="text-field flex-row">
+		<%= form.text_field :name, autocomplete: "name", placeholder: 'Name' %>
+	</div>
+	<div class="text-field flex-row">
+		<%= form.text_field :icon, autocomplete: "icon", placeholder: 'Icon URL' %>
+	</div>
+	<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: "#{name} generic-alert" %>
+  <% end -%>
+<%end%>
+
